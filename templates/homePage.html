@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Book Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homePage.css') }}" type="text/css">
+</head>
+
+<body>
+  
+ <div class="container">
+  <p class="title">Book Recomindation System</p>
+    <form class="search-bar" method='POST'>
+        <input type="text" placeholder="Find Your Book" autocomplete="off" name="q">
+        <button type="submit"><img src="static/images/Search.png"></button>
+    </form>
+    
+    {% if results %}   
+        <div id="results">
+          <h1>Recommended Books</h1>
+          <div class="table">
+            
+            {% for result in results%}
+              <div class="cl_result">
+
+                
+
+                <p> {{ result[0] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[1] }}></img>
+                 </div>
+              </div>
+     
+      <div class="cl_result">
+                <p> {{ result[2] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[3] }}></img>
+                </div>
+              </div>
+     
+      <div class="cl_result">
+                <p> {{ result[4] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[5] }}></img>
+                </div>
+              </div>
+      
+      <div class="cl_result">
+                <p> {{ result[6] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[7] }}></img>
+                </div>
+              </div>
+      
+			  <div class="cl_result">
+                <p> {{ result[8] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[9] }}></img>
+                </div>
+              </div>
+     
+			  <div class="cl_result">
+                <p> {{ result[10] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[11] }}></img>
+                </div>
+              </div>
+      
+			  <div class="cl_result">
+                <p> {{ result[12] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[13] }}></img>
+                </div>
+              </div>
+      
+			  <div class="cl_result">
+                <p> {{ result[14] }}</p>
+                <div class="cl_result_img">
+                  <img src={{ result[15] }}></img>
+                </div>
+              </div>
+     
+      
+            {% endfor %}
+            </div>
+        </div>
+      {% endif %}
+	  
+	  
+	   {% if errors %}   
+        <div id="errors">
+          <div class="table">
+              <div>
+
+                <h1>{{ errors[0] }}</h1>
+              </div>
+
+            </div>
+        </div>
+      {% endif %}
+       
+ </div>   
+
+    
+</body>
+</html>
